@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis de Amenazas e Inteligencia — LAMASSU Security</title>
+<link rel="canonical" href="https://www.lamassu-security.es/amenazas.html">
+<meta property="og:url" content="https://www.lamassu-security.es/amenazas.html">
+
+<meta name="description" content="La seguridad efectiva requiere saber a qué se enfrenta. El análisis de amenazas proporciona una visión actualizada y accionable del entorno de riesgo — elaborad">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#1C2B3A;background:#fff;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif}a{text-decoration:none}
+:root{--navy:#0A1A2E;--navy-mid:#0F2444;--blue:#1A4480;--gold:#C4922A;--gold-l:#E0B45A;--slate:#8B9CB5;--off:#F0F4F9;--white:#fff}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,26,46,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(196,146,42,.2)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:12px}.logo-hex{display:block}
+.logo-name{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:2px}
+.logo-sub{font-size:9px;color:var(--slate);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:-3px}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none}.nav-links a{color:rgba(255,255,255,.75);font-size:13px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}.nav-cta{background:var(--gold);color:var(--navy)!important;padding:8px 16px;border-radius:2px;font-weight:700!important}
+.breadcrumb{background:var(--off);border-bottom:1px solid rgba(0,0,0,.07);padding:12px 0;margin-top:66px}
+.bc-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--slate)}
+.bc-inner a{color:var(--slate);transition:color .2s}.bc-inner a:hover{color:var(--gold)}.bc-sep{color:rgba(0,0,0,.25)}.bc-current{color:var(--navy);font-weight:500}
+.svc-hero{background:var(--navy);padding:72px 0 56px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(196,146,42,.03) 79px,rgba(196,146,42,.03) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(196,146,42,.03) 79px,rgba(196,146,42,.03) 80px)}
+.hero-rune{position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:serif;font-size:200px;color:rgba(196,146,42,.04);pointer-events:none;user-select:none;line-height:1}
+.svc-hero-inner{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.svc-tag-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
+.svc-tag-badge span{background:rgba(196,146,42,.15);border:1px solid rgba(196,146,42,.3);color:var(--gold);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 12px}
+.svc-hero h1{font-size:clamp(36px,6vw,64px);font-weight:800;color:#fff;line-height:.95;margin-bottom:18px;letter-spacing:-1px}
+.svc-hero h1 em{color:var(--gold);font-style:normal}.svc-hero-sub{color:rgba(255,255,255,.65);font-size:15px;line-height:1.7;margin-bottom:28px;font-weight:300;max-width:700px}
+.svc-hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn-gold{background:var(--gold);color:var(--navy);padding:12px 24px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;transition:all .25s;display:inline-block}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px)}
+.btn-dl{border:1px solid rgba(196,146,42,.4);color:rgba(255,255,255,.8);padding:11px 18px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:2px;transition:all .2s;display:inline-flex;align-items:center;gap:7px}
+.btn-dl:hover{border-color:var(--gold);color:var(--gold)}
+.stats-bar{background:var(--blue);padding:18px 0}.stats-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#fff}.stat-num span{color:var(--gold-l)}
+.stat-lbl{color:rgba(255,255,255,.55);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+section{padding:60px 0}.sec-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+.sec-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:12px}.sec-eyebrow::before{content:'';width:28px;height:2px;background:var(--gold)}
+.sec-eyebrow p{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase}
+.sec-title{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.05;color:var(--navy);margin-bottom:12px}
+.sec-sub{color:#4A6080;font-size:15px;line-height:1.65;max-width:560px}.dark-sec{background:var(--navy)}
+.dark-sec .sec-title{color:#fff}.dark-sec .sec-eyebrow::before{background:var(--gold)}.dark-sec .sec-sub{color:var(--slate)}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.aud-card{background:var(--off);border:1px solid rgba(0,0,0,.07);padding:22px;border-radius:4px;border-top:3px solid var(--gold);transition:all .25s}
+.aud-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px)}.aud-card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}.aud-card p{font-size:13px;color:#4A6080;line-height:1.6}
+.includes-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:36px}
+.inc-item{background:#fff;border:1px solid rgba(0,0,0,.07);padding:14px 18px;display:flex;gap:10px;align-items:flex-start;border-radius:4px;transition:all .2s}
+.inc-item:hover{border-color:var(--gold)}.inc-check{width:22px;height:22px;background:rgba(26,68,128,.08);border:1px solid var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.inc-check svg{width:12px;height:12px}.inc-item p{font-size:13px;color:#1C2B3A;line-height:1.5;font-weight:500}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;position:relative}
+.proc-line{position:absolute;top:27px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,rgba(196,146,42,.1),rgba(196,146,42,.5),rgba(196,146,42,.1))}
+.proc-step{text-align:center;padding:0 14px;position:relative;z-index:1}
+.proc-num{width:54px;height:54px;background:var(--navy);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--gold)}
+.proc-step h4{color:#fff;font-size:16px;font-weight:700;margin-bottom:8px}.proc-step p{color:var(--slate);font-size:13px;line-height:1.65}
+.proc-time{display:inline-block;margin-top:10px;background:rgba(196,146,42,.1);border:1px solid rgba(196,146,42,.2);padding:3px 10px;font-size:10px;color:var(--gold);font-weight:600;letter-spacing:1px}
+.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:36px}
+.law-item{background:#fff;border:1px solid rgba(0,0,0,.07);padding:14px 18px;display:flex;gap:12px;align-items:flex-start;border-radius:4px}
+.law-tag{background:var(--navy);color:var(--gold-l);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;padding:3px 8px;border-radius:2px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.law-item p{font-size:13px;color:#4A6080;line-height:1.5}
+.faq-list{margin-top:36px;display:flex;flex-direction:column;gap:2px}
+.faq-item{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:4px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;padding:14px 18px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;color:var(--navy);transition:background .2s}
+.faq-q:hover{background:rgba(196,146,42,.04)}.faq-q span:last-child{font-size:20px;color:var(--gold);flex-shrink:0;transition:transform .3s;font-weight:400}
+.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}.faq-a{display:none;padding:0 18px 14px;color:#4A6080;font-size:14px;line-height:1.7}.faq-item.open .faq-a{display:block}
+.cta-sec{background:linear-gradient(135deg,#040E1C 0%,var(--navy-mid) 100%);padding:60px 0}.cta-inner{max-width:700px;margin:0 auto;padding:0 24px;text-align:center}
+.cta-inner h2{font-size:clamp(30px,5vw,46px);font-weight:800;color:#fff;margin-bottom:12px}.cta-inner h2 em{color:var(--gold);font-style:normal}
+.cta-inner p{color:rgba(255,255,255,.6);font-size:15px;margin-bottom:28px;line-height:1.65}.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{background:#040E1C;padding:24px 0;border-top:1px solid rgba(196,146,42,.15)}
+.footer-bottom{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{color:rgba(255,255,255,.25);font-size:12px}.footer-legal{display:flex;gap:18px}.footer-legal a{color:rgba(255,255,255,.25);font-size:12px;transition:color .2s}.footer-legal a:hover{color:var(--gold)}
+@media(max-width:1024px){.audience-grid{grid-template-columns:1fr 1fr}.includes-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr;gap:32px}.proc-line{display:none}.legal-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links{display:none}.audience-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:1fr 1fr}}
+
+/* ── AÑADIDO: menú móvil, cookies y botones flotantes (paridad con home) ── */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;display:block}
+.mob-menu{display:none;position:fixed;top:100%;left:0;right:0;background:var(--navy);border-top:1px solid rgba(196,146,42,.2);padding:20px;z-index:99;max-height:calc(100vh - 70px);overflow-y:auto}
+.mob-menu.open{display:block}
+.mob-menu a{display:block;color:rgba(255,255,255,.8);font-size:15px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06);font-weight:500}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--navy);border-top:2px solid var(--gold);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+#cookieBanner p{color:rgba(255,255,255,.75);font-size:13px;line-height:1.5;flex:1;min-width:240px}
+#cookieBanner a{color:var(--gold)}
+.ck-btns{display:flex;gap:10px}
+.ck-all{background:var(--gold);color:var(--navy);border:none;padding:9px 18px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;cursor:pointer;border-radius:2px}
+.ck-min{background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.25);padding:9px 14px;font-size:13px;cursor:pointer;border-radius:2px}
+.float-btns{position:fixed;bottom:24px;right:20px;z-index:500;display:flex;flex-direction:column;gap:10px;align-items:flex-end;transition:bottom .25s}
+body.cookie-open .float-btns{bottom:110px}
+@media(max-width:480px){body.cookie-open .float-btns{bottom:160px}}
+.float-wa{display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 16px;border-radius:28px;font-size:14px;font-weight:600;box-shadow:0 4px 14px rgba(37,211,102,.4);transition:all .25s;white-space:nowrap}
+.float-wa:hover{background:#20bb5a;transform:translateY(-2px)}
+.float-wa svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+.float-scroll{width:42px;height:42px;background:var(--navy);border:1px solid rgba(196,146,42,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:all .3s}
+.float-scroll.vis{opacity:1}
+.float-scroll svg{width:18px;height:18px;fill:var(--gold)}
+@media(max-width:768px){.float-wa{border-radius:50%;padding:12px;font-size:0}.float-wa svg{width:22px;height:22px}}
+</style></head><body class="cookie-open">
+<div id="cookieBanner">
+  <p>Utilizamos cookies propias y de terceros para mejorar su experiencia. Puede aceptar todas o gestionar sus preferencias. <a href="cookies.html">Política de cookies</a>.</p>
+  <div class="ck-btns">
+    <button class="ck-min" onclick="closeCookie('essential')">Solo esenciales</button>
+    <button class="ck-all" onclick="closeCookie('all')">Aceptar todas</button>
+  </div>
+</div>
+
+<nav><div class="nav-inner">
+  <a class="logo" href="index.html"><svg class="logo-hex" viewBox="0 0 72 72" style="width:40px;height:40px;flex-shrink:0"><polygon points="36,4 66,20 66,52 36,68 6,52 6,20" fill="none" stroke="var(--gold)" stroke-width="2.5"/><polygon points="36,16 54,26 54,46 36,56 18,46 18,26" fill="var(--gold)"/><text x="36" y="40" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="10.5" fill="var(--navy)" text-anchor="middle">LMSS</text></svg><div><div class="logo-name">LAMASSU</div><span class="logo-sub">Security Consulting</span></div></a>
+  <ul class="nav-links">
+    <li><a href="index.html#servicios">Servicios</a></li><li><a href="index.html#proyectos">Proyectos</a></li>
+    <li><a href="index.html#sectores">Sectores</a></li><li><a href="index.html#blog">Actualidad</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Consulta gratuita</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir menú de navegación"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="tel:+34910000000" style="color:var(--gold-l)!important" onclick="toggleMenu()">📞 +34 910 000 000</a>
+  <a href="index.html#servicios" onclick="toggleMenu()">Servicios</a>
+  <a href="index.html#proyectos" onclick="toggleMenu()">Proyectos</a>
+  <a href="index.html#sectores" onclick="toggleMenu()">Sectores</a>
+  <a href="index.html#blog" onclick="toggleMenu()">Actualidad</a>
+  <a href="index.html#contacto" onclick="toggleMenu()">Solicitar consulta gratuita →</a>
+</div>
+
+
+<div class="breadcrumb"><div class="bc-inner">
+  <a href="index.html">Inicio</a><span class="bc-sep">›</span>
+  <a href="index.html#servicios">Servicios</a><span class="bc-sep">›</span>
+  <span class="bc-current">Análisis de Amenazas e Inteligencia</span>
+</div></div>
+
+<section class="svc-hero">
+  <div class="hero-grid"></div><div class="hero-rune">ᚺ</div>
+  <div class="svc-hero-inner">
+    <div class="svc-tag-badge"><span>Inteligencia · Actualización trimestral</span></div>
+    <h1>Análisis de Amenazas e Inteligencia</h1>
+    <p class="svc-hero-sub">La seguridad efectiva requiere saber a qué se enfrenta. El análisis de amenazas proporciona una visión actualizada y accionable del entorno de riesgo — elaborada por quienes han trabajado en el ámbito de la inteligencia institucional.</p>
+    <div class="svc-hero-actions">
+      <a href="index.html#contacto" class="btn-gold">Solicitar consulta gratuita</a>
+      <a href="documentos/fichas/LAMASSU_Ficha_AMENAZAS_ES.pdf" class="btn-dl" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>Ficha ES
+      </a>
+      <a href="documentos/fichas/LAMASSU_Ficha_AMENAZAS_EN.pdf" class="btn-dl" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>Ficha EN
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar"><div class="stats-inner">
+  <div><div class="stat-num"><span>OSINT</span></div><div class="stat-lbl">Fuentes abiertas</div></div><div><div class="stat-num"><span>7-10</span></div><div class="stat-lbl">Días entrega</div></div><div><div class="stat-num"><span>90</span></div><div class="stat-lbl">Días actualización</div></div><div><div class="stat-num"><span>360</span></div><div class="stat-lbl">° Visión</div></div>
+</div></div>
+
+<section><div class="sec-inner">
+  <div class="sec-eyebrow"><p>Destinatarios</p></div>
+  <h2 class="sec-title">¿A quién va dirigido?</h2>
+  <div class="audience-grid">
+      <div class="aud-card">
+        <h3>Grandes operadores críticos</h3>
+        <p>Organizaciones en sectores de energía, transporte, salud o TIC que necesitan una evaluación actualizada de las amenazas que pueden afectar a sus infraestructuras.</p>
+      </div>
+      <div class="aud-card">
+        <h3>Responsables de seguridad y compliance</h3>
+        <p>Directores de seguridad y compliance officers que necesitan argumentar decisiones de inversión en seguridad con base en datos de inteligencia contrastados.</p>
+      </div>
+      <div class="aud-card">
+        <h3>Empresas ante eventos de alto riesgo</h3>
+        <p>Organizaciones que van a celebrar eventos relevantes, grandes obras o cambios significativos y necesitan evaluar el panorama de amenazas específico para ese período.</p>
+      </div></div>
+</div></section>
+
+<section style="background:var(--off)"><div class="sec-inner">
+  <div class="sec-eyebrow"><p>Alcance</p></div>
+  <h2 class="sec-title">¿Qué incluye el servicio?</h2>
+  <div class="includes-grid">
+      <div class="inc-item">
+        <div class="inc-check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <p>Análisis del panorama de amenazas físicas para el sector de la empresa</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <p>Identificación de actores de riesgo relevantes para la organización</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <p>Evaluación de vectores de ataque más probables y su impacto potencial</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <p>Análisis de contexto geopolítico relevante para las operaciones</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <p>Tendencias recientes de incidentes en el sector a nivel nacional e internacional</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <p>Informe ejecutivo con recomendaciones priorizadas de mitigación</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <p>Actualización trimestral disponible como servicio de suscripción</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-check"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <p>Briefing de presentación al equipo directivo</p>
+      </div></div>
+</div></section>
+
+<section class="dark-sec"><div class="sec-inner" style="position:relative;z-index:1">
+  <div class="sec-eyebrow"><p>Proceso</p></div>
+  <h2 class="sec-title">Cómo trabajamos</h2>
+  <div class="process-steps"><div class="proc-line"></div>
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h4>Definición de alcance</h4>
+        <p>Reunión inicial para delimitar el perímetro del análisis: sector, geografía, activos prioritarios y período de análisis.</p>
+        <span class="proc-time">Día 1</span>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h4>Recopilación de inteligencia</h4>
+        <p>Análisis de fuentes abiertas (OSINT), bases de datos de incidentes, informes sectoriales y contexto geopolítico relevante.</p>
+        <span class="proc-time">Día 1-5</span>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h4>Análisis y valoración</h4>
+        <p>Cruce y valoración de la información: actores, capacidades, intenciones y probabilidad de materialización.</p>
+        <span class="proc-time">Día 5-8</span>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h4>Informe y briefing</h4>
+        <p>Entrega del informe ejecutivo y sesión de presentación de los hallazgos al equipo directivo o de seguridad.</p>
+        <span class="proc-time">Día 8-10</span>
+      </div></div>
+</div></section>
+
+<section><div class="sec-inner">
+  <div class="sec-eyebrow"><p>Normativa</p></div>
+  <h2 class="sec-title">Marco legal aplicable</h2>
+  <div class="legal-grid">
+      <div class="law-item">
+        <span class="law-tag">Ley 8/2011</span>
+        <div><p>El análisis de amenazas es un componente esencial del PSO. Este informe puede servir como base para la actualización de los planes de seguridad.</p></div>
+      </div>
+      <div class="law-item">
+        <span class="law-tag">Directiva CER</span>
+        <div><p>Exige a las entidades críticas mantener una visión actualizada de las amenazas para sustentar sus medidas de resiliencia.</p></div>
+      </div>
+      <div class="law-item">
+        <span class="law-tag">NIS2</span>
+        <div><p>Requiere una gestión proactiva del riesgo basada en el conocimiento del panorama de amenazas del sector.</p></div>
+      </div>
+      <div class="law-item">
+        <span class="law-tag">RGPD</span>
+        <div><p>El análisis de OSINT se realiza conforme al marco legal de protección de datos y sin vulnerar la privacidad de terceros.</p></div>
+      </div></div>
+</div></section>
+
+<section style="background:var(--off)"><div class="sec-inner">
+  <div class="sec-eyebrow"><p>Preguntas frecuentes</p></div>
+  <h2 class="sec-title">Preguntas sobre Análisis</h2>
+  <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)"><span>¿De qué fuentes se obtiene la información?</span><span>+</span></button>
+        <div class="faq-a">Exclusivamente de fuentes abiertas (OSINT): bases de datos públicas de incidentes, informes de organismos gubernamentales y agencias de seguridad, publicaciones académicas y sectoriales, y monitorización de medios especializados. Nunca se accede a fuentes no autorizadas.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)"><span>¿El informe puede revelar información sensible sobre la empresa?</span><span>+</span></button>
+        <div class="faq-a">No. El análisis se centra en el entorno externo de amenazas, no en el interior de la organización. No se recoge ni procesa información confidencial del cliente salvo la necesaria para definir el alcance.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)"><span>¿Qué diferencia hay entre este servicio y un informe OSINT genérico?</span><span>+</span></button>
+        <div class="faq-a">La diferencia está en la experiencia del analista y en la contextualización. LAMASSU no produce inteligencia bruta, sino análisis accionable: qué amenazas son relevantes para su organización concreta y qué medidas se recomiendan.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)"><span>¿El servicio trimestral es un contrato independiente?</span><span>+</span></button>
+        <div class="faq-a">Sí. El análisis inicial es un encargo puntual. El servicio de actualización trimestral es un contrato de suscripción separado, con un informe de actualización cada 90 días.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="tFaq(this)"><span>¿Se puede solicitar un análisis urgente ante un evento concreto?</span><span>+</span></button>
+        <div class="faq-a">Sí. Ante situaciones de riesgo elevado o eventos específicos, LAMASSU ofrece análisis de urgencia con entrega en 48-72 horas. Consulte disponibilidad y tarifa.</div>
+      </div></div>
+</div></section>
+
+<section class="cta-sec"><div class="cta-inner">
+  <h2>¿Necesita <em>Análisis?</em></h2>
+  <p>Revisamos su situación sin compromiso y le indicamos exactamente qué necesita, cuándo y a qué coste.</p>
+  <div class="cta-btns">
+    <a href="index.html#contacto" class="btn-gold">Solicitar consulta gratuita</a>
+    <a href="documentos/fichas/LAMASSU_Ficha_AMENAZAS_ES.pdf" class="btn-dl" download>Descargar ficha ES</a>
+    <a href="documentos/fichas/LAMASSU_Ficha_AMENAZAS_EN.pdf" class="btn-dl" download>Download EN</a>
+  </div>
+</div></section>
+
+<footer><div class="footer-bottom">
+  <p class="footer-copy">© 2026 LAMASSU Security Consulting · Madrid</p>
+  <div class="footer-legal"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a></div>
+</div></footer>
+
+<div class="float-btns">
+  <button class="float-scroll" id="scrollBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba"><svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg></button>
+  <a class="float-wa" href="https://wa.me/34910000000?text=Hola%2C%20me%20gustar%C3%ADa%20información%20sobre%20sus%20servicios%20de%20seguridad%20de%20infraestructuras%20cr%C3%ADticas." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.99.576 3.845 1.571 5.406L2 22l4.598-1.554C8.045 21.42 9.98 22 12 22c5.522 0 10-4.477 10-10S17.522 2 12 2zm0 18c-1.748 0-3.37-.505-4.73-1.38l-.337-.21-3.504 1.185 1.15-3.407-.226-.356A8 8 0 0112 4c4.42 0 8 3.58 8 8s-3.58 8-8 8z"/></svg><span style="font-size:14px">WhatsApp</span></a>
+</div>
+<script>
+
+function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open')}
+function closeCookie(choice){
+  document.getElementById('cookieBanner').style.display='none';
+  document.body.classList.remove('cookie-open');
+  localStorage.setItem('lm_ck', choice==='all' ? 'all' : 'essential');
+}
+if(localStorage.getItem('lm_ck')){
+  document.getElementById('cookieBanner').style.display='none';
+  document.body.classList.remove('cookie-open');
+}
+window.addEventListener('scroll',function(){
+  const b=document.getElementById('scrollBtn');
+  if(!b)return;
+  if(window.pageYOffset>400)b.classList.add('vis');
+  else b.classList.remove('vis');
+});
+function tFaq(btn){const i=btn.closest('.faq-item');const o=i.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open');}
+(function(){const cfgs=[{s:130,t:'12%',l:'3%',d:22,del:0,c:'rgba(196,146,42,.04)',dx:40,dy:30},{s:90,t:'60%',l:'88%',d:18,del:5,c:'rgba(196,146,42,.03)',dx:-35,dy:40}];cfgs.forEach((c,i)=>{const el=document.createElement('div');const st=document.createElement('style');st.textContent=`@keyframes hfp${i}{0%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(${c.dx}px,${c.dy}px) rotate(180deg)}100%{transform:translate(0,0) rotate(360deg)}}`;document.head.appendChild(st);el.style.cssText=`position:fixed;pointer-events:none;z-index:0;width:${c.s}px;height:${c.s}px;top:${c.t};left:${c.l};clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:${c.c};animation:hfp${i} ${c.d}s ${c.del}s ease-in-out infinite`;document.body.appendChild(el);});})();
+</script></body></html>

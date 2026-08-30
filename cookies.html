@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pol&iacute;tica de Cookies &mdash; LAMASSU Security</title>
+<meta name="description" content="Política de cookies de LAMASSU Security Consulting: qué cookies utiliza este sitio web y cómo puede gestionarlas.">
+
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#1C2B3A;background:#fff}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif}a{text-decoration:none}
+:root{--navy:#0A1A2E;--gold:#C4922A;--slate:#8B9CB5;--off:#F0F4F9;--blue:#1A4480}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,26,46,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(196,146,42,.2)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-hex{display:block}
+
+.logo-name{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:2px}
+.logo-sub{font-size:9px;color:var(--slate);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:-3px}
+.nav-back{color:rgba(255,255,255,.7);font-size:13px;font-weight:500;transition:color .2s}.nav-back:hover{color:var(--gold)}
+.breadcrumb{background:var(--off);border-bottom:1px solid rgba(0,0,0,.07);padding:12px 0;margin-top:66px}
+.bc{max-width:1280px;margin:0 auto;padding:0 24px;font-size:12px;color:var(--slate);display:flex;gap:8px;align-items:center}
+.bc a{color:var(--slate)}.bc a:hover{color:var(--gold)}.bc-sep{color:rgba(0,0,0,.2)}.bc-cur{color:var(--navy);font-weight:500}
+.hero{background:var(--navy);padding:56px 0 40px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(196,146,42,.03) 79px,rgba(196,146,42,.03) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(196,146,42,.03) 79px,rgba(196,146,42,.03) 80px)}
+.hero-inner{max-width:900px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.tag{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:clamp(36px,5vw,56px);font-weight:800;color:#fff;line-height:1;margin-bottom:10px}
+.hero p{color:rgba(255,255,255,.6);font-size:15px;line-height:1.65}
+.meta{display:flex;gap:20px;margin-top:14px;flex-wrap:wrap}
+.meta span{color:var(--slate);font-size:12px}
+.content{max-width:900px;margin:0 auto;padding:56px 24px}
+.sec{margin-bottom:44px}
+.sec h2{font-size:26px;font-weight:800;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--gold)}
+.sec h3{font-size:18px;font-weight:700;color:var(--blue);margin-top:18px;margin-bottom:7px}
+.sec p{color:#4A6080;font-size:15px;line-height:1.75;margin-bottom:10px}
+.sec ul{list-style:none;margin-bottom:10px}
+.sec ul li{color:#4A6080;font-size:15px;line-height:1.7;padding:3px 0 3px 20px;position:relative}
+.sec ul li::before{content:'\2192';color:var(--gold);position:absolute;left:0;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+th{background:var(--navy);color:#fff;padding:10px 12px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700}
+td{padding:9px 12px;border-bottom:1px solid rgba(0,0,0,.06);color:#4A6080;line-height:1.5;vertical-align:top}
+tr:nth-child(even) td{background:var(--off)}
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.type-card{background:var(--off);border:1px solid rgba(0,0,0,.07);padding:16px;border-radius:4px;border-top:3px solid var(--gold)}
+.type-card h4{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.type-card p{font-size:13px;color:#4A6080;line-height:1.55;margin:0}
+.badge{display:inline-block;margin-top:8px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:2px}
+.badge-ok{background:rgba(30,123,62,.1);color:#1E7B3E}
+.badge-req{background:rgba(196,146,42,.12);color:var(--gold)}
+.browser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.browser-card{background:var(--off);border:1px solid rgba(0,0,0,.07);padding:14px;border-radius:4px;text-align:center}
+.browser-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.browser-card p{font-size:12px;color:var(--slate);line-height:1.5}
+.consent-box{background:var(--navy);padding:22px;border-radius:4px;margin:14px 0}
+.consent-box p{color:rgba(255,255,255,.75);font-size:14px;line-height:1.65;margin:0}
+.consent-box strong{color:var(--gold)}
+.manage-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:10px 20px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:2px;margin-top:14px;cursor:pointer;border:none;transition:all .2s}
+.manage-btn:hover{background:#E0B45A}
+code{background:var(--off);padding:1px 5px;border-radius:3px;font-size:12px;font-family:monospace}
+footer{background:#040E1C;padding:24px 0;border-top:1px solid rgba(196,146,42,.15)}
+.footer-bottom{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{color:rgba(255,255,255,.25);font-size:12px}
+.footer-legal{display:flex;gap:18px}.footer-legal a{color:rgba(255,255,255,.25);font-size:12px;transition:color .2s}.footer-legal a:hover{color:var(--gold)}
+@media(max-width:700px){.type-grid{grid-template-columns:1fr}.browser-grid{grid-template-columns:1fr 1fr}table{font-size:11px}}
+</style></head><body>
+<nav><div class="nav-inner">
+  <a class="logo" href="index.html"><svg class="logo-hex" viewBox="0 0 72 72" style="width:40px;height:40px;flex-shrink:0"><polygon points="36,4 66,20 66,52 36,68 6,52 6,20" fill="none" stroke="var(--gold)" stroke-width="2.5"/><polygon points="36,16 54,26 54,46 36,56 18,46 18,26" fill="var(--gold)"/><text x="36" y="40" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="10.5" fill="var(--navy)" text-anchor="middle">LMSS</text></svg><div><div class="logo-name">LAMASSU</div><span class="logo-sub">Security Consulting</span></div></a>
+  <a class="nav-back" href="index.html">&larr; Volver al inicio</a>
+</div></nav>
+<div class="breadcrumb"><div class="bc"><a href="index.html">Inicio</a><span class="bc-sep">&#8250;</span><span class="bc-cur">Pol&iacute;tica de Cookies</span></div></div>
+<div class="hero"><div class="hero-grid"></div><div class="hero-inner">
+  <div class="tag">Ley 34/2002 (LSSI) &middot; RGPD (UE) 2016/679</div>
+  <h1>Pol&iacute;tica de Cookies</h1>
+  <p>Informaci&oacute;n sobre las cookies utilizadas en lamassu-security.es y c&oacute;mo puede gestionarlas.</p>
+  <div class="meta"><span>&#128203; Versi&oacute;n 1.0</span><span>&#128197; Agosto 2026</span></div>
+</div></div>
+
+<div class="content">
+  <div class="sec">
+    <h2>1. &iquest;Qu&eacute; son las cookies?</h2>
+    <p>Las cookies son peque&ntilde;os archivos de texto que los sitios web almacenan en el navegador del usuario cuando &eacute;ste visita la p&aacute;gina. Permiten que el sitio web recuerde informaci&oacute;n sobre la visita para facilitar la navegaci&oacute;n en visitas posteriores y para analizar el uso del sitio.</p>
+    <p>Conforme a la <strong>Ley 34/2002 (LSSI)</strong> y el <strong>RGPD (UE) 2016/679</strong>, el uso de cookies que no sean estrictamente t&eacute;cnicas requiere el consentimiento previo e informado del usuario.</p>
+  </div>
+
+  <div class="sec">
+    <h2>2. Tipos de cookies utilizadas</h2>
+    <h3>Por su titular</h3>
+    <ul>
+      <li><strong>Cookies propias:</strong> creadas y gestionadas directamente por LAMASSU.</li>
+      <li><strong>Cookies de terceros:</strong> creadas por proveedores externos (Google Analytics) cuyos servicios LAMASSU incorpora.</li>
+    </ul>
+    <h3>Por su finalidad</h3>
+    <div class="type-grid">
+      <div class="type-card"><h4>&#128295; T&eacute;cnicas / Necesarias</h4><p>Imprescindibles para el funcionamiento del Sitio Web. Gestionan el banner de cookies, preferencias de idioma y funciones b&aacute;sicas de seguridad.</p><span class="badge badge-ok">No requieren consentimiento</span></div>
+      <div class="type-card"><h4>&#128202; Anal&iacute;ticas</h4><p>Permiten cuantificar el n&uacute;mero de visitantes, analizar su comportamiento y mejorar el rendimiento del Sitio Web.</p><span class="badge badge-req">Requieren consentimiento</span></div>
+      <div class="type-card"><h4>&#9881;&#65039; Preferencias</h4><p>Recuerdan opciones seleccionadas por el usuario (idioma, regi&oacute;n) para personalizar la experiencia.</p><span class="badge badge-req">Requieren consentimiento</span></div>
+      <div class="type-card"><h4>&#128226; Marketing</h4><p>LAMASSU <strong>no utiliza</strong> actualmente cookies de marketing o publicidad. Si se incorporan en el futuro, esta pol&iacute;tica se actualizar&aacute;.</p><span class="badge badge-ok">No utilizadas actualmente</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>3. Tabla detallada de cookies</h2>
+    <table>
+      <thead><tr><th>Nombre</th><th>Tipo</th><th>Titular</th><th>Finalidad</th><th>Duraci&oacute;n</th></tr></thead>
+      <tbody>
+        <tr><td><code>hm_ck</code></td><td>T&eacute;cnica</td><td>LAMASSU</td><td>Registra la aceptaci&oacute;n del banner de cookies</td><td>1 a&ntilde;o</td></tr>
+        <tr><td><code>hm_lang</code></td><td>Preferencia</td><td>LAMASSU</td><td>Almacena el idioma seleccionado</td><td>1 a&ntilde;o</td></tr>
+        <tr><td><code>_ga</code></td><td>Anal&iacute;tica</td><td>Google LLC</td><td>Identifica usuarios &uacute;nicos para Google Analytics (IP anonimizada)</td><td>2 a&ntilde;os</td></tr>
+        <tr><td><code>_ga_XXXXXX</code></td><td>Anal&iacute;tica</td><td>Google LLC</td><td>Almacena el estado de sesi&oacute;n en Google Analytics</td><td>2 a&ntilde;os</td></tr>
+        <tr><td><code>_gid</code></td><td>Anal&iacute;tica</td><td>Google LLC</td><td>Distingue usuarios &uacute;nicos para Google Analytics</td><td>24 horas</td></tr>
+        <tr><td><code>_gat</code></td><td>Anal&iacute;tica</td><td>Google LLC</td><td>Limita la tasa de solicitudes a Google Analytics</td><td>1 minuto</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--slate);font-style:italic">* Google Analytics se configura con anonimizaci&oacute;n de IP activada. Los datos no se transmiten sin el consentimiento del usuario.</p>
+  </div>
+
+  <div class="sec">
+    <h2>4. Gesti&oacute;n del consentimiento</h2>
+    <div class="consent-box"><p>Al acceder por primera vez al Sitio Web, se muestra un <strong>banner de cookies</strong> que permite: (i) aceptar todas las cookies; (ii) aceptar solo las cookies t&eacute;cnicas necesarias. La decisi&oacute;n queda registrada durante <strong>12 meses</strong>. Puede retirar o modificar su consentimiento en cualquier momento pulsando el bot&oacute;n:</p></div>
+    <button class="manage-btn" onclick="localStorage.removeItem('hm_ck');location.reload()">&#9881;&#65039; Gestionar mis preferencias de cookies</button>
+  </div>
+
+  <div class="sec">
+    <h2>5. C&oacute;mo gestionar las cookies desde su navegador</h2>
+    <div class="browser-grid">
+      <div class="browser-card"><h4>&#127760; Chrome</h4><p>Configuraci&oacute;n &rarr; Privacidad y seguridad &rarr; Cookies y otros datos de sitios</p></div>
+      <div class="browser-card"><h4>&#129418; Firefox</h4><p>Opciones &rarr; Privacidad y seguridad &rarr; Cookies y datos del sitio</p></div>
+      <div class="browser-card"><h4>&#129517; Safari</h4><p>Preferencias &rarr; Privacidad &rarr; Gestionar datos de sitios web</p></div>
+      <div class="browser-card"><h4>&#128310; Edge</h4><p>Configuraci&oacute;n &rarr; Cookies y permisos del sitio</p></div>
+      <div class="browser-card"><h4>&#128308; Opera</h4><p>Configuraci&oacute;n &rarr; Avanzado &rarr; Privacidad y seguridad &rarr; Cookies</p></div>
+      <div class="browser-card"><h4>&#128241; M&oacute;vil</h4><p>Ajustes del navegador &rarr; Privacidad &rarr; Borrar datos de navegaci&oacute;n</p></div>
+    </div>
+    <p>La desactivaci&oacute;n de cookies t&eacute;cnicas puede afectar al funcionamiento del Sitio Web. La desactivaci&oacute;n de cookies anal&iacute;ticas no afecta a la navegaci&oacute;n.</p>
+  </div>
+
+  <div class="sec">
+    <h2>6. Transferencias internacionales</h2>
+    <p>Google LLC, proveedor de Google Analytics, puede transferir datos a Estados Unidos al amparo de las Cl&aacute;usulas Contractuales Tipo aprobadas por la Comisi&oacute;n Europea. Para m&aacute;s informaci&oacute;n: <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--gold)">policies.google.com/privacy</a></p>
+  </div>
+
+  <div class="sec">
+    <h2>7. Modificaciones</h2>
+    <p>LAMASSU puede actualizar esta Pol&iacute;tica de Cookies en funci&oacute;n de cambios legislativos o nuevos servicios incorporados al Sitio Web. Para cualquier consulta: <strong>rgpd@lamassu-security.es</strong></p>
+    <p style="color:var(--slate);font-size:13px;font-style:italic;margin-top:14px">Versi&oacute;n 1.0 &middot; &Uacute;ltima actualizaci&oacute;n: agosto de 2026</p>
+  </div>
+</div>
+
+<footer><div class="footer-bottom">
+  <p class="footer-copy">&copy; 2026 LAMASSU Security Consulting, S.L. &middot; CIF B-87654321 &middot; Madrid</p>
+  <div class="footer-legal">
+    <a href="privacidad.html">Privacidad</a>
+    <a href="cookies.html">Cookies</a>
+    <a href="index.html">Inicio</a>
+  </div>
+</div></footer>
+</body></html>
