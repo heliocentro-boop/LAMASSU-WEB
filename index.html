@@ -1275,15 +1275,21 @@ function openSvcPage(url, event){
   if(event) event.preventDefault();
   const modal = document.getElementById('svcModal');
   const box = document.getElementById('svcModalBox');
-  box.innerHTML = '<div class="svc-modal-loading"><div class="hm-spin"></div><p>Cargando servicio...</p></div>';
+  box.innerHTML = '<div class="svc-modal-loading" id="svcModalLoading"><div class="hm-spin"></div><p>Cargando servicio...</p></div><iframe class="svc-modal-frame" id="svcModalFrame" style="display:none"></iframe>';
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
-  const iframe = document.createElement('iframe');
-  iframe.className = 'svc-modal-frame';
-  iframe.src = url;
-  iframe.onload = function(){ box.innerHTML=''; box.appendChild(iframe); };
-  // fallback: si tarda, se sustituye igualmente al cargar
-  setTimeout(function(){ if(box.querySelector('.svc-modal-loading')){ box.innerHTML=''; box.appendChild(iframe);} }, 4000);
+  const frame = document.getElementById('svcModalFrame');
+  const loading = document.getElementById('svcModalLoading');
+  frame.onload = function(){
+    loading.style.display = 'none';
+    frame.style.display = 'block';
+  };
+  frame.onerror = function(){
+    loading.innerHTML = '<p>No se pudo cargar el servicio. <a href="'+url+'" style="color:var(--gold)">Ábrelo en una pestaña nueva</a>.</p>';
+  };
+  frame.src = url;
+  // red de seguridad: si por lo que sea onload no dispara, mostramos el iframe igual a los 5s
+  setTimeout(function(){ if(frame.style.display==='none'){ loading.style.display='none'; frame.style.display='block'; } }, 5000);
 }
 function closeSvcModal(){
   const modal = document.getElementById('svcModal');
