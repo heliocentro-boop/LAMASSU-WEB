@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Casos ilustrativos — LAMASSU Security Consulting</title>
 <meta name="description" content="Casos ilustrativos y metodología de trabajo de LAMASSU Security Consulting para operadores de energía, puertos, centros de datos, farmacia y química.">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/fonts.css"><link rel="stylesheet" href="assets/css/cookies.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;color:#1C2B3A;background:#fff;overflow-x:hidden}
@@ -64,13 +64,25 @@ footer{background:#040E1C;padding:24px 0;border-top:1px solid rgba(196,146,42,.1
 .footer-copy{color:rgba(255,255,255,.25);font-size:12px}.footer-legal{display:flex;gap:18px}.footer-legal a{color:rgba(255,255,255,.25);font-size:12px;transition:color .2s}.footer-legal a:hover{color:var(--gold)}
 @media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.case-body{grid-template-columns:1fr}}
 @media(max-width:768px){.nav-links{display:none}.flow{grid-template-columns:1fr}}
+
+/* cabecera grande, igual que la portada */
+nav{background:linear-gradient(180deg,#06101E,#0A1A2E);border-bottom:3px solid var(--gold);box-shadow:0 6px 28px rgba(0,0,0,.45)}
+.nav-inner{max-width:1680px;height:116px;padding:0 36px;gap:28px}
+.logo{gap:20px}.logo-hex{width:84px;height:84px}.logo-hex span{font-size:20px}
+.logo-name{font-size:clamp(34px,3.5vw,58px);line-height:.95;letter-spacing:4px}
+.logo-sub{font-size:clamp(11px,1vw,15px);letter-spacing:5px;color:var(--gold-l);font-weight:600;margin-top:4px}
+.nav-links{gap:clamp(14px,1.8vw,30px)}.nav-links a{font-size:clamp(14px,1.2vw,19px);font-weight:600;color:#fff}
+.nav-cta{padding:13px 22px;font-size:clamp(14px,1.15vw,18px);color:var(--navy)!important}
+.breadcrumb{margin-top:116px}
+@media(max-width:1024px){.nav-links li:not(:last-child){display:none}}
+@media(max-width:768px){.nav-inner{height:84px;padding:0 16px}.logo-hex{width:54px;height:54px}.logo-hex span{font-size:13px}.logo-name{font-size:34px}.logo-sub{font-size:10px;letter-spacing:3px}.breadcrumb{margin-top:84px}}
 </style></head><body>
 <nav><div class="nav-inner">
   <a class="logo" href="index.html"><div class="logo-hex"><span>LMSS</span></div><div><div class="logo-name">LAMASSU</div><span class="logo-sub">Security Consulting</span></div></a>
   <ul class="nav-links">
     <li><a href="index.html#servicios">Servicios</a></li><li><a href="index.html#proyectos">Proyectos</a></li>
     <li><a href="index.html#sectores">Sectores</a></li><li><a href="index.html#blog">Actualidad</a></li>
-    <li><a href="index.html#contacto" class="nav-cta">Consulta gratuita</a></li>
+    <li><a href="extranet.html">Acceder</a></li><li><a href="index.html#contacto" class="nav-cta">Consulta gratuita</a></li>
   </ul>
 </div></nav>
 <div class="breadcrumb"><div class="bc-inner"><a href="index.html">Inicio</a><span class="bc-sep">›</span><a href="index.html#proyectos">Proyectos</a><span class="bc-sep">›</span><span class="bc-current">Casos ilustrativos</span></div></div>
@@ -142,6 +154,33 @@ footer{background:#040E1C;padding:24px 0;border-top:1px solid rgba(196,146,42,.1
 </div></section>
 <footer><div class="footer-bottom">
   <p class="footer-copy">© 2026 LAMASSU Security Consulting · Madrid</p>
-  <div class="footer-legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a></div>
+  <div class="footer-legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="#" class="js-reopen-cookies">Configurar cookies</a></div>
 </div></footer>
-</body></html>
+<!-- BANNER Y PANEL DE COOKIES -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+  <div class="cookie-container">
+    <div class="cookie-content">
+      <h3 id="cookie-title">Cookies y privacidad</h3>
+      <p id="cookie-description">Utilizamos almacenamiento propio necesario para el funcionamiento de la web. Opcionalmente, contamos de forma anónima las visitas para mejorar nuestros servicios, sin cookies de terceros. Puede aceptar, rechazar lo opcional o configurar sus preferencias. Más información en nuestra <a href="cookies.html">Política de cookies</a>.</p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="btn-accept-all" class="cookie-btn cookie-btn-primary" type="button">Aceptar todas</button>
+      <button id="btn-reject-all" class="cookie-btn cookie-btn-secondary" type="button">Rechazar opcionales</button>
+      <button id="btn-configure" class="cookie-btn cookie-btn-outline" type="button">Configurar</button>
+    </div>
+  </div>
+</div>
+<div id="cookie-modal" class="cookie-modal" aria-hidden="true">
+  <div class="cookie-modal-overlay"></div>
+  <div class="cookie-modal-content" role="dialog" aria-label="Preferencias de cookies">
+    <div class="cookie-modal-header"><h4>Preferencias de cookies</h4><button id="btn-close-modal" class="cookie-modal-close" aria-label="Cerrar" type="button">&times;</button></div>
+    <div class="cookie-modal-body">
+      <div class="cookie-option"><div class="cookie-option-header"><div><strong>Técnicas (necesarias)</strong><p>Imprescindibles para el funcionamiento de la web, guardar sus preferencias y mantener la sesión si accede a la extranet.</p></div>
+        <label class="cookie-switch"><input type="checkbox" checked disabled><span class="cookie-slider"></span></label></div></div>
+      <div class="cookie-option"><div class="cookie-option-header"><div><strong>Estadísticas anónimas (opcionales)</strong><p>Cuentan las visitas a las páginas para mejorar los contenidos. No usan cookies de terceros, no guardan su IP ni le identifican.</p></div>
+        <label class="cookie-switch"><input type="checkbox" id="check-analytics"><span class="cookie-slider"></span></label></div></div>
+    </div>
+    <div class="cookie-modal-footer"><button id="btn-save-preferences" class="cookie-btn cookie-btn-primary" type="button">Guardar selección</button></div>
+  </div>
+</div>
+<script src="assets/js/config.js"></script><script src="assets/js/contador.js"></script><script src="assets/js/cookies.js"></script></body></html>

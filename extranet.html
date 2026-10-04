@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://*.supabase.co; base-uri 'self'; form-action 'self'">
+<meta name="robots" content="noindex, nofollow">
+<title>Extranet — LAMASSU Security Consulting</title>
+<link rel="stylesheet" href="assets/css/fonts.css"><link rel="stylesheet" href="assets/css/extranet.css"><link rel="stylesheet" href="assets/css/cookies.css">
+</head><body>
+<header class="top"><a class="brand" href="index.html"><svg viewBox="0 0 72 72" aria-hidden="true"><polygon points="36,4 66,20 66,52 36,68 6,52 6,20" fill="none" stroke="#C4922A" stroke-width="2.5"/><polygon points="36,16 54,26 54,46 36,56 18,46 18,26" fill="#C4922A"/><text x="36" y="42" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="13" fill="#0A1A2E">LMSS</text></svg><span><b>LAMASSU</b><small>Security Consulting</small></span></a>
+<div class="top-right"><span id="quien"></span><button id="btn-salir" class="btn sec hidden" type="button">Salir</button><a class="btn sec" href="index.html">Volver a la web</a></div></header>
+<main class="wrap">
+
+<section id="vista-config" class="card hidden"><h2 class="sec">Extranet pendiente de configurar</h2>
+<p class="msg info">Falta conectar el servicio de datos. Sigue la guía de puesta en marcha y rellena <b>assets/js/config.js</b> con la URL y la clave pública de tu proyecto.</p></section>
+
+<section id="vista-login" class="card login hidden"><h1>Acceso a la extranet</h1>
+<p class="sub">Área privada para socios y clientes de LAMASSU. Si necesita una cuenta, solicítela por correo a <a href="mailto:contacto@lamassu-security.es">contacto@lamassu-security.es</a>.</p>
+<form id="form-login"><label for="login-email">Correo electrónico</label><input type="email" id="login-email" autocomplete="username" required>
+<label for="login-pass">Contraseña</label><input type="password" id="login-pass" autocomplete="current-password" required>
+<div style="margin-top:20px"><button id="btn-login" class="btn" type="submit">Entrar</button></div></form>
+<button class="link" id="btn-olvido" type="button">He olvidado mi contraseña</button><div id="login-msg" class="msg hidden"></div></section>
+
+<section id="vista-recovery" class="card login hidden"><h1>Nueva contraseña</h1><p class="sub">Elija una contraseña de al menos 10 caracteres.</p>
+<form id="form-recovery"><label for="rec-pass">Contraseña nueva</label><input type="password" id="rec-pass" autocomplete="new-password" minlength="10" required>
+<div style="margin-top:20px"><button class="btn" type="submit">Guardar</button></div></form><div id="rec-msg" class="msg hidden"></div></section>
+
+<section id="vista-sinperfil" class="card login hidden"><h1>Cuenta sin perfil</h1><p class="sub">Su acceso es correcto, pero todavía no tiene un perfil asignado (socio o cliente). Escriba a <a href="mailto:contacto@lamassu-security.es">contacto@lamassu-security.es</a>.</p></section>
+
+<section id="vista-cliente" class="hidden"><h2 class="sec">Mis documentos</h2>
+<div class="card scroll"><table id="tabla-mis-docs"><thead><tr><th>Fecha</th><th>Documento</th><th></th></tr></thead><tbody></tbody></table></div>
+<p class="note">Los enlaces de descarga caducan a los 60 segundos por seguridad. Pulse de nuevo «Descargar» si ha caducado.</p></section>
+
+<section id="vista-socio" class="hidden">
+<div class="tabs"><button class="tab on" data-pane="pane-panel" type="button">Panel</button><button class="tab" data-pane="pane-consultas" type="button">Consultas</button><button class="tab" data-pane="pane-docs" type="button">Clientes y documentos</button></div>
+
+<div class="pane" id="pane-panel"><div class="kpis" id="kpis"></div>
+<div class="card scroll"><h2 class="sec">Descargas por ficha</h2><table id="tabla-fichas"><thead><tr><th>Ficha (servicio_idioma)</th><th>Total</th><th>Últimos 30 días</th></tr></thead><tbody></tbody></table>
+<p class="note">Los contadores no usan cookies ni guardan IP ni identificadores. Las visitas solo se cuentan si el visitante acepta las estadísticas anónimas.</p></div></div>
+
+<div class="pane hidden" id="pane-consultas"><div class="card scroll"><h2 class="sec">Consultas recibidas</h2><table id="tabla-consultas"><thead><tr><th>Fecha</th><th>Contacto</th><th>Origen</th><th>Mensaje</th><th>Estado</th></tr></thead><tbody></tbody></table>
+<p class="note">Contienen datos personales: acceda solo desde equipos de confianza y no las reenvíe fuera de la organización.</p></div></div>
+
+<div class="pane hidden" id="pane-docs"><div class="grid2"><div class="card"><h2 class="sec">Subir documento a un cliente</h2>
+<form id="form-doc"><label for="doc-cliente">Cliente</label><select id="doc-cliente"></select><label for="doc-titulo">Título</label><input type="text" id="doc-titulo" maxlength="150">
+<label for="doc-file">Archivo (máx. 20 MB)</label><input type="file" id="doc-file"><div style="margin-top:20px"><button id="btn-doc" class="btn" type="submit">Subir</button></div></form><div id="doc-msg" class="msg hidden"></div>
+<p class="note">Las cuentas de cliente se crean en el panel de Supabase (Authentication → Add user) y se les asigna perfil con el SQL de la guía.</p></div>
+<div class="card scroll"><h2 class="sec">Documentos subidos</h2><table id="tabla-docs"><thead><tr><th>Fecha</th><th>Cliente</th><th>Título</th><th></th></tr></thead><tbody></tbody></table></div></div></div>
+</section>
+</main>
+<!-- BANNER Y PANEL DE COOKIES -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+  <div class="cookie-container">
+    <div class="cookie-content">
+      <h3 id="cookie-title">Cookies y privacidad</h3>
+      <p id="cookie-description">Utilizamos almacenamiento propio necesario para el funcionamiento de la web. Opcionalmente, contamos de forma anónima las visitas para mejorar nuestros servicios, sin cookies de terceros. Puede aceptar, rechazar lo opcional o configurar sus preferencias. Más información en nuestra <a href="cookies.html">Política de cookies</a>.</p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="btn-accept-all" class="cookie-btn cookie-btn-primary" type="button">Aceptar todas</button>
+      <button id="btn-reject-all" class="cookie-btn cookie-btn-secondary" type="button">Rechazar opcionales</button>
+      <button id="btn-configure" class="cookie-btn cookie-btn-outline" type="button">Configurar</button>
+    </div>
+  </div>
+</div>
+<div id="cookie-modal" class="cookie-modal" aria-hidden="true">
+  <div class="cookie-modal-overlay"></div>
+  <div class="cookie-modal-content" role="dialog" aria-label="Preferencias de cookies">
+    <div class="cookie-modal-header"><h4>Preferencias de cookies</h4><button id="btn-close-modal" class="cookie-modal-close" aria-label="Cerrar" type="button">&times;</button></div>
+    <div class="cookie-modal-body">
+      <div class="cookie-option"><div class="cookie-option-header"><div><strong>Técnicas (necesarias)</strong><p>Imprescindibles para el funcionamiento de la web, guardar sus preferencias y mantener la sesión si accede a la extranet.</p></div>
+        <label class="cookie-switch"><input type="checkbox" checked disabled><span class="cookie-slider"></span></label></div></div>
+      <div class="cookie-option"><div class="cookie-option-header"><div><strong>Estadísticas anónimas (opcionales)</strong><p>Cuentan las visitas a las páginas para mejorar los contenidos. No usan cookies de terceros, no guardan su IP ni le identifican.</p></div>
+        <label class="cookie-switch"><input type="checkbox" id="check-analytics"><span class="cookie-slider"></span></label></div></div>
+    </div>
+    <div class="cookie-modal-footer"><button id="btn-save-preferences" class="cookie-btn cookie-btn-primary" type="button">Guardar selección</button></div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script><script src="assets/js/supabase.js"></script><script src="assets/js/contador.js"></script><script src="assets/js/cookies.js"></script><script src="assets/js/extranet.js"></script>
+</body></html>
