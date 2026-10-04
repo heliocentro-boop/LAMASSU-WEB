@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casos ilustrativos — LAMASSU Security Consulting</title>
+<meta name="description" content="Casos ilustrativos y metodología de trabajo de LAMASSU Security Consulting para operadores de energía, puertos, centros de datos, farmacia y química.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#1C2B3A;background:#fff;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif}a{text-decoration:none}
+:root{--navy:#0A1A2E;--navy-mid:#0F2444;--blue:#1A4480;--gold:#C4922A;--gold-l:#E0B45A;--slate:#8B9CB5;--off:#F0F4F9;--white:#fff}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,26,46,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(196,146,42,.2)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:12px}.logo-hex{width:40px;height:40px;background:var(--gold);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);display:flex;align-items:center;justify-content:center}
+.logo-hex span{font-family:'Barlow Condensed',sans-serif;font-weight:800;color:var(--navy);font-size:11px}.logo-name{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:2px}
+.logo-sub{font-size:9px;color:var(--slate);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:-3px}
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none}.nav-links a{color:rgba(255,255,255,.75);font-size:13px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}.nav-cta{background:var(--gold);color:var(--navy)!important;padding:8px 16px;border-radius:2px;font-weight:700!important}
+.breadcrumb{background:var(--off);border-bottom:1px solid rgba(0,0,0,.07);padding:12px 0;margin-top:66px}
+.bc-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--slate)}
+.bc-inner a{color:var(--slate);transition:color .2s}.bc-inner a:hover{color:var(--gold)}.bc-sep{color:rgba(0,0,0,.25)}.bc-current{color:var(--navy);font-weight:500}
+.svc-hero{background:var(--navy);padding:72px 0 56px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(196,146,42,.03) 79px,rgba(196,146,42,.03) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(196,146,42,.03) 79px,rgba(196,146,42,.03) 80px)}
+.svc-hero-inner{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.svc-tag-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
+.svc-tag-badge span{background:rgba(196,146,42,.15);border:1px solid rgba(196,146,42,.3);color:var(--gold);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 12px}
+.svc-hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;color:#fff;line-height:.98;margin-bottom:18px;letter-spacing:-1px}
+.svc-hero h1 em{color:var(--gold);font-style:normal}.svc-hero-sub{color:rgba(255,255,255,.65);font-size:15px;line-height:1.7;margin-bottom:8px;font-weight:300;max-width:760px}
+.btn-gold{background:var(--gold);color:var(--navy);padding:12px 24px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;transition:all .25s;display:inline-block}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px)}
+section{padding:56px 0}.sec-inner{max-width:1100px;margin:0 auto;padding:0 24px}
+.sec-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:12px}.sec-eyebrow::before{content:'';width:28px;height:2px;background:var(--gold)}
+.sec-eyebrow p{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase}
+.sec-title{font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.05;color:var(--navy);margin-bottom:12px}
+.notice{background:#FFF8E5;border:1px solid rgba(196,146,42,.4);border-left:4px solid var(--gold);padding:16px 20px;border-radius:2px;font-size:14px;line-height:1.65;color:#4A3A10;margin:0 0 8px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.flow-step{background:var(--off);border-top:3px solid var(--gold);padding:16px;border-radius:2px}.flow-step b{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--gold);letter-spacing:1px}
+.flow-step h4{font-size:17px;color:var(--navy);margin:4px 0 6px}.flow-step p{font-size:12.5px;color:#4A6080;line-height:1.55}
+.case{border:1px solid rgba(0,0,0,.09);border-radius:4px;margin-top:28px;overflow:hidden;scroll-margin-top:84px}
+.case-head{background:var(--navy);padding:22px 26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
+.case-head .sector{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.case-head h3{color:#fff;font-size:26px;font-weight:800;margin-top:4px}
+.case-badge{background:rgba(196,146,42,.15);border:1px solid rgba(196,146,42,.4);color:var(--gold-l);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px}
+.case-body{padding:24px 26px;display:grid;grid-template-columns:1fr 1fr;gap:22px 34px}
+.case-body h4{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.case-body p,.case-body li{font-size:14px;line-height:1.65;color:#2C3E55}.case-body ul{padding-left:18px}.case-body li{margin-bottom:4px}
+.steps{list-style:none;padding:0!important;counter-reset:s}.steps li{counter-increment:s;position:relative;padding-left:34px;margin-bottom:10px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border:2px solid var(--gold);border-radius:50%;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;color:var(--gold);display:flex;align-items:center;justify-content:center}
+.full{grid-column:1/-1}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{background:rgba(26,68,128,.07);color:var(--blue);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 9px;border-radius:2px}
+.art{border:1px solid rgba(0,0,0,.09);border-radius:4px;margin-top:30px;scroll-margin-top:84px;overflow:hidden}
+.art-head{background:var(--off);padding:22px 28px;border-bottom:3px solid var(--gold)}
+.art-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.art-cat{background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 10px}
+.art-date{font-size:12px;color:#4A6080}.art-head h2{font-size:clamp(24px,3.4vw,32px);color:var(--navy);font-weight:800;line-height:1.1}
+.art-body{padding:24px 28px}.art-body h3{font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin:20px 0 8px}.art-body h3:first-child{margin-top:0}
+.art-body p,.art-body li{font-size:15px;line-height:1.7;color:#2C3E55}.art-body ul{padding-left:20px}.art-body li{margin-bottom:7px}
+.interp{background:rgba(26,68,128,.05);border-left:3px solid var(--blue);padding:12px 16px;margin-top:6px}
+.src{font-size:13.5px}.src a{color:var(--blue);text-decoration:underline}.verif{font-size:12px;color:#6B7C93;margin-top:14px;font-style:italic}
+.cta-sec{background:linear-gradient(135deg,#040E1C 0%,var(--navy-mid) 100%);padding:56px 0;margin-top:40px}.cta-inner{max-width:700px;margin:0 auto;padding:0 24px;text-align:center}
+.cta-inner h2{font-size:clamp(28px,5vw,42px);font-weight:800;color:#fff;margin-bottom:12px}.cta-inner h2 em{color:var(--gold);font-style:normal}
+.cta-inner p{color:rgba(255,255,255,.6);font-size:15px;margin-bottom:24px;line-height:1.65}
+footer{background:#040E1C;padding:24px 0;border-top:1px solid rgba(196,146,42,.15)}
+.footer-bottom{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{color:rgba(255,255,255,.25);font-size:12px}.footer-legal{display:flex;gap:18px}.footer-legal a{color:rgba(255,255,255,.25);font-size:12px;transition:color .2s}.footer-legal a:hover{color:var(--gold)}
+@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.case-body{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.flow{grid-template-columns:1fr}}
+</style></head><body>
+<nav><div class="nav-inner">
+  <a class="logo" href="index.html"><div class="logo-hex"><span>LMSS</span></div><div><div class="logo-name">LAMASSU</div><span class="logo-sub">Security Consulting</span></div></a>
+  <ul class="nav-links">
+    <li><a href="index.html#servicios">Servicios</a></li><li><a href="index.html#proyectos">Proyectos</a></li>
+    <li><a href="index.html#sectores">Sectores</a></li><li><a href="index.html#blog">Actualidad</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Consulta gratuita</a></li>
+  </ul>
+</div></nav>
+<div class="breadcrumb"><div class="bc-inner"><a href="index.html">Inicio</a><span class="bc-sep">›</span><a href="index.html#proyectos">Proyectos</a><span class="bc-sep">›</span><span class="bc-current">Casos ilustrativos</span></div></div>
+<section class="svc-hero"><div class="hero-grid"></div><div class="svc-hero-inner">
+  <div class="svc-tag-badge"><span>Casos ilustrativos · Metodología de trabajo</span></div>
+  <h1>Casos ilustrativos<br><em>y esquema de trabajo</em></h1><p class="svc-hero-sub">Cinco ejemplos sencillos y sin nombres que muestran cómo abordamos cada encargo, desde el diagnóstico hasta la presentación ante la autoridad.</p>
+</div></section>
+<section><div class="sec-inner">
+  <div class="notice"><strong>Casos ilustrativos.</strong> Los ejemplos de esta página son genéricos y sirven para mostrar cómo trabajamos en cada sector. No corresponden a clientes concretos ni a planes aprobados, y no contienen datos de ninguna organización.</div>
+  <div class="sec-eyebrow" style="margin-top:36px"><p>Metodología</p></div>
+  <h2 class="sec-title">El mismo esquema, adaptado a cada operador</h2>
+  <div class="flow">
+    <div class="flow-step"><b>01</b><h4>Diagnóstico</h4><p>Revisión de la situación normativa, las instalaciones y la documentación existente.</p></div>
+    <div class="flow-step"><b>02</b><h4>Análisis</h4><p>Amenazas, vulnerabilidades e impacto sobre las funciones esenciales.</p></div>
+    <div class="flow-step"><b>03</b><h4>Redacción</h4><p>Elaboración de los planes con revisión conjunta con el cliente.</p></div>
+    <div class="flow-step"><b>04</b><h4>Presentación</h4><p>Gestión del trámite y seguimiento hasta la aprobación.</p></div>
+  </div>
+  <article class="case" id="energia">
+  <div class="case-head"><div><div class="sector">Energía</div><h3>Operador de red eléctrica</h3></div><span class="case-badge">Caso ilustrativo</span></div>
+  <div class="case-body">
+    <div><h4>Situación tipo</h4><p>Empresa que distribuye energía eléctrica, con varias instalaciones (por ejemplo subestaciones y centros de control) y que recibe la notificación de designación como operador crítico.</p></div>
+    <div><h4>Qué se necesita</h4><p>Un Plan de Seguridad del Operador (PSO) y un Plan de Protección Específico (PPE) por cada instalación designada. Plazos legales: 6 meses para el PSO y 4 meses por instalación tras su aprobación.</p></div>
+    <div><h4>Esquema de trabajo</h4><ol class="steps"><li><b>Diagnóstico (72 horas).</b> Revisión de la designación, las instalaciones y la documentación existente.</li><li><b>Análisis de riesgos.</b> Amenazas, vulnerabilidades e impacto en cada instalación.</li><li><b>Redacción.</b> PSO según las Guías de Contenidos Mínimos del CNPIC y, después, un PPE por instalación.</li><li><b>Presentación y seguimiento</b> ante el CNPIC, incluida la respuesta a requerimientos.</li></ol></div>
+    <div><h4>Entregables</h4><ul><li>PSO completo</li><li>Un PPE por instalación</li><li>Matriz de riesgos y planos de seguridad</li><li>Justificante de presentación</li></ul>
+      <h4 style="margin-top:18px">Marco normativo</h4><div class="tags"><span class="tag">Ley 8/2011</span><span class="tag">RD 704/2011</span><span class="tag">Ley 5/2014</span><span class="tag">Directiva CER</span></div></div>
+  </div>
+</article><article class="case" id="puertos">
+  <div class="case-head"><div><div class="sector">Puertos</div><h3>Concesionario portuario</h3></div><span class="case-badge">Caso ilustrativo</span></div>
+  <div class="case-body">
+    <div><h4>Situación tipo</h4><p>Concesionario de una terminal de mercancías, con zonas de acceso restringido, mucho tránsito de personas y vehículos, y necesidad de coordinarse con la Autoridad Portuaria.</p></div>
+    <div><h4>Qué se necesita</h4><p>Un PSO y un Plan Integral de Seguridad (Plan de Seguridad más Plan de Autoprotección), alineados con los planes de protección portuarios que ya estén vigentes.</p></div>
+    <div><h4>Esquema de trabajo</h4><ol class="steps"><li><b>Diagnóstico (72 horas).</b> Revisión de la concesión, las zonas de la terminal y la documentación existente.</li><li><b>Análisis de accesos y flujos.</b> Perímetro, control de accesos, tránsito de vehículos y puntos vulnerables.</li><li><b>Redacción coordinada.</b> PSO, Plan de Seguridad y Plan de Autoprotección como documentos independientes.</li><li><b>Revisión con la Autoridad Portuaria</b> y entrega de los documentos definitivos.</li></ol></div>
+    <div><h4>Entregables</h4><ul><li>PSO completo</li><li>Plan de Seguridad firmado por Director de Seguridad habilitado</li><li>Plan de Autoprotección</li><li>Mapas de accesos y evacuación</li></ul>
+      <h4 style="margin-top:18px">Marco normativo</h4><div class="tags"><span class="tag">Ley 8/2011</span><span class="tag">Ley 5/2014</span><span class="tag">RD 393/2007</span><span class="tag">Directiva CER</span></div></div>
+  </div>
+</article><article class="case" id="centro-datos">
+  <div class="case-head"><div><div class="sector">TIC / Centros de datos</div><h3>Centro de datos</h3></div><span class="case-badge">Caso ilustrativo</span></div>
+  <div class="case-body">
+    <div><h4>Situación tipo</h4><p>Operador de un centro de datos cuyos servicios son esenciales para otras entidades, con exigencias de disponibilidad y de continuidad del servicio.</p></div>
+    <div><h4>Qué se necesita</h4><p>PSO y PPE, zonas de seguridad por niveles de criticidad y un Plan de Continuidad de Negocio que tenga en cuenta NIS2 y la Directiva CER.</p></div>
+    <div><h4>Esquema de trabajo</h4><ol class="steps"><li><b>Diagnóstico (72 horas).</b> Revisión de designación, instalaciones y documentación existente.</li><li><b>Mapa de zonas y dependencias.</b> Zonas por criticidad y dependencias de energía, climatización y comunicaciones.</li><li><b>Redacción.</b> PSO y PPE, y Plan de Continuidad con análisis de impacto (BIA) y objetivos RTO/RPO.</li><li><b>Prueba y entrega.</b> Simulacro de activación, ajustes y presentación.</li></ol></div>
+    <div><h4>Entregables</h4><ul><li>PSO y PPE</li><li>Diseño de zonas de seguridad por niveles</li><li>Análisis de impacto (BIA) y Plan de Continuidad</li><li>Programa de simulacros</li></ul>
+      <h4 style="margin-top:18px">Marco normativo</h4><div class="tags"><span class="tag">Ley 8/2011</span><span class="tag">NIS2</span><span class="tag">Directiva CER</span><span class="tag">ISO 22301</span></div></div>
+  </div>
+</article><article class="case" id="farmaceutico">
+  <div class="case-head"><div><div class="sector">Industria farmacéutica</div><h3>Laboratorio farmacéutico</h3></div><span class="case-badge">Caso ilustrativo</span></div>
+  <div class="case-body">
+    <div><h4>Situación tipo</h4><p>Laboratorio con instalaciones de producción y almacenamiento de medicamentos, áreas de acceso restringido y dependencia de su cadena de suministro.</p></div>
+    <div><h4>Qué se necesita</h4><p>Un PSO y un PPE por instalación, apoyados en un análisis de amenazas propio del sector, coordinados con los planes de emergencia del centro.</p></div>
+    <div><h4>Esquema de trabajo</h4><ol class="steps"><li><b>Diagnóstico (72 horas).</b> Revisión de designación, instalaciones y documentación existente.</li><li><b>Análisis de amenazas.</b> Amenazas del sector y de cada instalación: producción, almacén y cadena de suministro.</li><li><b>Redacción.</b> PSO y PPE con medidas permanentes, graduales y temporales.</li><li><b>Presentación y seguimiento</b> ante el CNPIC.</li></ol></div>
+    <div><h4>Entregables</h4><ul><li>PSO y un PPE por instalación</li><li>Informe de amenazas del sector</li><li>Matriz de riesgos</li><li>Justificante de presentación</li></ul>
+      <h4 style="margin-top:18px">Marco normativo</h4><div class="tags"><span class="tag">Ley 8/2011</span><span class="tag">RD 704/2011</span><span class="tag">Directiva CER</span><span class="tag">NIS2</span></div></div>
+  </div>
+</article><article class="case" id="quimica">
+  <div class="case-head"><div><div class="sector">Industria química</div><h3>Planta química</h3></div><span class="case-badge">Caso ilustrativo</span></div>
+  <div class="case-body">
+    <div><h4>Situación tipo</h4><p>Planta química con sustancias peligrosas que ya tiene planes de seguridad, pero con la revisión bienal vencida y cambios desde la última versión.</p></div>
+    <div><h4>Qué se necesita</h4><p>Actualizar el PSO y los PPE, y elaborar un Plan de Continuidad de Negocio, coordinados con el plan de emergencia de la planta.</p></div>
+    <div><h4>Esquema de trabajo</h4><ol class="steps"><li><b>Revisión del plan existente.</b> Detección de brechas respecto a la normativa vigente.</li><li><b>Análisis de cambios.</b> Instalaciones, procesos, amenazas y normativa desde la última versión.</li><li><b>Actualización.</b> Nuevas versiones del PSO y los PPE, y Plan de Continuidad.</li><li><b>Coordinación y presentación.</b> Alineación con el plan de emergencia y presentación ante el CNPIC.</li></ol></div>
+    <div><h4>Entregables</h4><ul><li>PSO y PPE actualizados</li><li>Informe de brechas</li><li>Plan de Continuidad de Negocio</li><li>Calendario de revisión bienal</li></ul>
+      <h4 style="margin-top:18px">Marco normativo</h4><div class="tags"><span class="tag">Ley 8/2011</span><span class="tag">RD 704/2011</span><span class="tag">Normativa Seveso (RD 840/2015)</span><span class="tag">Ley de Resiliencia</span></div></div>
+  </div>
+</article>
+</div></section>
+<section class="cta-sec" style="margin-top:0"><div class="cta-inner">
+  <h2>¿Necesita un esquema <em>para su caso?</em></h2>
+  <p>Cuéntenos su sector y su situación y le indicamos qué documentos necesita y cómo los abordaríamos.</p>
+  <a href="index.html#contacto" class="btn-gold">Contactar</a>
+</div></section>
+<footer><div class="footer-bottom">
+  <p class="footer-copy">© 2026 LAMASSU Security Consulting · Madrid</p>
+  <div class="footer-legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a></div>
+</div></footer>
+</body></html>
