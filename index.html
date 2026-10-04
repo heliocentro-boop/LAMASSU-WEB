@@ -38,7 +38,7 @@
   "serviceType": ["Plan de Seguridad del Operador","Plan de Protección Específico","Habilitaciones de Seguridad HSE","Auditorías de Seguridad Privada","Plan de Continuidad de Negocio","Peritaje en Seguridad","Análisis de Amenazas"]
 }
 </script>
-<link rel="stylesheet" href="assets/css/fonts.css"><link rel="stylesheet" href="assets/css/cookies.css">
+<link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="assets/css/fonts.css"><link rel="stylesheet" href="assets/css/cookies.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -87,7 +87,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,26,46,.97);ba
 
 /* ── HERO ── */
 .hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding-top:78px;position:relative;overflow:hidden}
-.hero-photo{position:absolute;inset:0;background:url('assets/img/fondo-hero.svg') center/cover;opacity:.22}
+.hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover;opacity:.08}
 .hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,26,46,.96) 40%,rgba(26,68,128,.8) 100%)}
 .hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(196,146,42,.03) 79px,rgba(196,146,42,.03) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(196,146,42,.03) 79px,rgba(196,146,42,.03) 80px)}
 .hero-scan{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:scan 6s ease-in-out infinite;opacity:.3}
@@ -501,31 +501,12 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
 </head>
 <body>
 
-<!-- BANNER Y PANEL DE COOKIES -->
-<div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
-  <div class="cookie-container">
-    <div class="cookie-content">
-      <h3 id="cookie-title">Cookies y privacidad</h3>
-      <p id="cookie-description">Utilizamos almacenamiento propio necesario para el funcionamiento de la web. Opcionalmente, contamos de forma anónima las visitas para mejorar nuestros servicios, sin cookies de terceros. Puede aceptar, rechazar lo opcional o configurar sus preferencias. Más información en nuestra <a href="cookies.html">Política de cookies</a>.</p>
-    </div>
-    <div class="cookie-buttons">
-      <button id="btn-accept-all" class="cookie-btn cookie-btn-primary" type="button">Aceptar todas</button>
-      <button id="btn-reject-all" class="cookie-btn cookie-btn-secondary" type="button">Rechazar opcionales</button>
-      <button id="btn-configure" class="cookie-btn cookie-btn-outline" type="button">Configurar</button>
-    </div>
-  </div>
-</div>
-<div id="cookie-modal" class="cookie-modal" aria-hidden="true">
-  <div class="cookie-modal-overlay"></div>
-  <div class="cookie-modal-content" role="dialog" aria-label="Preferencias de cookies">
-    <div class="cookie-modal-header"><h4>Preferencias de cookies</h4><button id="btn-close-modal" class="cookie-modal-close" aria-label="Cerrar" type="button">&times;</button></div>
-    <div class="cookie-modal-body">
-      <div class="cookie-option"><div class="cookie-option-header"><div><strong>Técnicas (necesarias)</strong><p>Imprescindibles para el funcionamiento de la web, guardar sus preferencias y mantener la sesión si accede a la extranet.</p></div>
-        <label class="cookie-switch"><input type="checkbox" checked disabled><span class="cookie-slider"></span></label></div></div>
-      <div class="cookie-option"><div class="cookie-option-header"><div><strong>Estadísticas anónimas (opcionales)</strong><p>Cuentan las visitas a las páginas para mejorar los contenidos. No usan cookies de terceros, no guardan su IP ni le identifican.</p></div>
-        <label class="cookie-switch"><input type="checkbox" id="check-analytics"><span class="cookie-slider"></span></label></div></div>
-    </div>
-    <div class="cookie-modal-footer"><button id="btn-save-preferences" class="cookie-btn cookie-btn-primary" type="button">Guardar selección</button></div>
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" role="dialog" aria-label="Aviso de cookies" style="display:none">
+  <p>Utilizamos almacenamiento propio necesario para el funcionamiento de la web y, si lo acepta, estadísticas anónimas de visitas. Algunas imágenes se cargan desde servidores de terceros. Más información en nuestra <a href="cookies.html">Política de cookies</a>.</p>
+  <div class="ck-btns">
+    <button class="ck-min" id="ck-min" type="button">Solo esenciales</button>
+    <button class="ck-all" id="ck-all" type="button">Aceptar todas</button>
   </div>
 </div>
 <!-- NAV -->
@@ -636,7 +617,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
       <p class="trust-lbl" data-i18n="trust_sectors">Sectores de actividad</p>
       <div class="sector-photos">
         <div class="sec-photo-card">
-          <div class="sec-photo-img" style="background-image:url('assets/img/sector-energia.svg')">
+          <div class="sec-photo-img" style="background-image:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&q=70')">
             <div class="sec-photo-lbl">
               <span class="sec-photo-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
               <span class="sec-photo-name">Energía</span>
@@ -644,7 +625,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
           </div>
         </div>
         <div class="sec-photo-card">
-          <div class="sec-photo-img" style="background-image:url('assets/img/sector-transporte.svg')">
+          <div class="sec-photo-img" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=300&q=70')">
             <div class="sec-photo-lbl">
               <span class="sec-photo-icon"><svg viewBox="0 0 24 24"><path d="M20 21H4v-2l2-1V10L4 9V7h7V4h2v3h7v2l-2 1v8l2 1v2zm-8-5a2 2 0 100-4 2 2 0 000 4z"/></svg></span>
               <span class="sec-photo-name">Transporte</span>
@@ -652,7 +633,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
           </div>
         </div>
         <div class="sec-photo-card">
-          <div class="sec-photo-img" style="background-image:url('assets/img/sector-salud.svg')">
+          <div class="sec-photo-img" style="background-image:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=300&q=70')">
             <div class="sec-photo-lbl">
               <span class="sec-photo-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></span>
               <span class="sec-photo-name">Salud</span>
@@ -660,7 +641,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
           </div>
         </div>
         <div class="sec-photo-card">
-          <div class="sec-photo-img" style="background-image:url('assets/img/sector-agua.svg')">
+          <div class="sec-photo-img" style="background-image:url('https://images.unsplash.com/photo-1533077162801-86490c593afb?w=300&q=70')">
             <div class="sec-photo-lbl">
               <span class="sec-photo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></span>
               <span class="sec-photo-name">Agua</span>
@@ -668,7 +649,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
           </div>
         </div>
         <div class="sec-photo-card">
-          <div class="sec-photo-img" style="background-image:url('assets/img/sector-quimica.svg')">
+          <div class="sec-photo-img" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&q=70')">
             <div class="sec-photo-lbl">
               <span class="sec-photo-icon"><svg viewBox="0 0 24 24"><path d="M9 3v11a3 3 0 006 0V3h-2v11a1 1 0 01-2 0V3H9zm-5 0l2 2H4v15h16V5h-2l2-2H4z"/></svg></span>
               <span class="sec-photo-name">Química</span>
@@ -676,7 +657,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
           </div>
         </div>
         <div class="sec-photo-card">
-          <div class="sec-photo-img" style="background-image:url('assets/img/sector-tic.svg')">
+          <div class="sec-photo-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=300&q=70')">
             <div class="sec-photo-lbl">
               <span class="sec-photo-icon"><svg viewBox="0 0 24 24"><path d="M20 3H4v2h16V3zm1 16H3v2h18v-2zM4 7v10h5v-4h6v4h5V7H4zm5 4H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg></span>
               <span class="sec-photo-name">TIC / CPD</span>
@@ -684,7 +665,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
           </div>
         </div>
         <div class="sec-photo-card">
-          <div class="sec-photo-img" style="background-image:url('assets/img/sector-financiero.svg')">
+          <div class="sec-photo-img" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&q=70')">
             <div class="sec-photo-lbl">
               <span class="sec-photo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z M4 14H3v7h18v-7H4zm14 5H6v-3h12v3z"/></svg></span>
               <span class="sec-photo-name">Financiero</span>
@@ -692,7 +673,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
           </div>
         </div>
         <div class="sec-photo-card">
-          <div class="sec-photo-img" style="background-image:url('assets/img/sector-logistica.svg')">
+          <div class="sec-photo-img" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=300&q=70')">
             <div class="sec-photo-lbl">
               <span class="sec-photo-icon"><svg viewBox="0 0 24 24"><path d="M20 8H4c-1.11 0-2 .89-2 2v6h2c0 1.11.89 2 2 2s2-.89 2-2h8c0 1.11.89 2 2 2s2-.89 2-2h2v-6c0-1.11-.89-2-2-2zm-9 1l3.5 2.25-3.5 2.25V9zM6 9h2v2H6V9zM3 14v-3h2v3H3zm18 0h-2v-3h2v3z"/></svg></span>
               <span class="sec-photo-name">Logística</span>
@@ -951,23 +932,23 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
     <p class="sec-sub">Ejemplos genéricos, sin clientes ni nombres, que muestran la metodología que aplicamos en cada sector. No corresponden a planes aprobados.</p>
     <div class="portfolio-grid">
       <div class="port-card">
-        <div class="port-photo" style="background-image:url('assets/img/sector-energia.svg')"><span class="port-sector">Energía</span></div>
+        <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=70')"><span class="port-sector">Energía</span></div>
         <div class="port-body"><span class="port-status" style="color:#1A4480;background:rgba(26,68,128,.08)">Caso ilustrativo</span><h3>Operador de red eléctrica</h3><p>Operador de distribución con varias instalaciones, designado operador crítico. Necesita un PSO y un PPE por instalación.</p><div class="port-tags"><span class="port-tag">PSO</span><span class="port-tag">PPE</span><span class="port-tag">Ley 8/2011</span></div><a href="casos-ilustrativos.html#energia" class="news-more">Ver esquema de trabajo →</a></div>
       </div>
       <div class="port-card">
-        <div class="port-photo" style="background-image:url('assets/img/sector-puertos.svg')"><span class="port-sector">Puertos</span></div>
+        <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&q=70')"><span class="port-sector">Puertos</span></div>
         <div class="port-body"><span class="port-status" style="color:#1A4480;background:rgba(26,68,128,.08)">Caso ilustrativo</span><h3>Concesionario portuario</h3><p>Concesionario de una terminal con zonas restringidas. Necesita un PSO y un Plan Integral coordinados con la Autoridad Portuaria.</p><div class="port-tags"><span class="port-tag">PSO</span><span class="port-tag">Plan Integral</span><span class="port-tag">Puertos</span></div><a href="casos-ilustrativos.html#puertos" class="news-more">Ver esquema de trabajo →</a></div>
       </div>
       <div class="port-card">
-        <div class="port-photo" style="background-image:url('assets/img/sector-tic.svg')"><span class="port-sector">TIC / Centros de datos</span></div>
+        <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=70')"><span class="port-sector">TIC / Centros de datos</span></div>
         <div class="port-body"><span class="port-status" style="color:#1A4480;background:rgba(26,68,128,.08)">Caso ilustrativo</span><h3>Centro de datos</h3><p>Operador de un centro de datos con servicios esenciales para terceros. Necesita PSO, PPE y un plan de continuidad alineado con NIS2.</p><div class="port-tags"><span class="port-tag">PSO</span><span class="port-tag">PPE</span><span class="port-tag">PCN</span><span class="port-tag">NIS2</span></div><a href="casos-ilustrativos.html#centro-datos" class="news-more">Ver esquema de trabajo →</a></div>
       </div>
       <div class="port-card">
-        <div class="port-photo" style="background-image:url('assets/img/caso-farma.svg')"><span class="port-sector">Industria farmacéutica</span></div>
+        <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=70')"><span class="port-sector">Industria farmacéutica</span></div>
         <div class="port-body"><span class="port-status" style="color:#1A4480;background:rgba(26,68,128,.08)">Caso ilustrativo</span><h3>Laboratorio farmacéutico</h3><p>Laboratorio con producción y almacenamiento de medicamentos. Necesita PSO y PPE, con análisis de amenazas del sector.</p><div class="port-tags"><span class="port-tag">PSO</span><span class="port-tag">PPE</span><span class="port-tag">Amenazas</span></div><a href="casos-ilustrativos.html#farmaceutico" class="news-more">Ver esquema de trabajo →</a></div>
       </div>
       <div class="port-card">
-        <div class="port-photo" style="background-image:url('assets/img/sector-quimica.svg')"><span class="port-sector">Industria química</span></div>
+        <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=70')"><span class="port-sector">Industria química</span></div>
         <div class="port-body"><span class="port-status" style="color:#1A4480;background:rgba(26,68,128,.08)">Caso ilustrativo</span><h3>Planta química</h3><p>Planta con planes vencidos. Necesita actualizar PSO y PPE y elaborar un plan de continuidad.</p><div class="port-tags"><span class="port-tag">PSO renovado</span><span class="port-tag">PCN</span><span class="port-tag">Seveso</span></div><a href="casos-ilustrativos.html#quimica" class="news-more">Ver esquema de trabajo →</a></div>
       </div>
     </div>
@@ -1016,9 +997,9 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
     <div class="sec-eyebrow"><p>Actualidad normativa</p></div>
     <h2 class="sec-title">Últimas noticias en<br>infraestructuras críticas</h2>
     <div class="news-grid">
-      <div class="news-card"><div class="news-photo" style="background-image:url('assets/img/noticia-ley.svg');"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,46,.7) 0%,transparent 60%)"></div><span class="news-cat">Legislación</span></div><div class="news-body"><p class="news-date">Marzo 2026</p><h3>La nueva Ley de Resiliencia de Entidades Críticas llega al Congreso</h3><p>El Consejo de Ministros aprobó el 17 de marzo de 2026 el proyecto de ley que traspone la Directiva CER. Sectores, obligaciones y autoridad designada.</p><a href="actualidad.html#ley-resiliencia" class="news-more">Leer más →</a></div></div>
-      <div class="news-card"><div class="news-photo" style="background-image:url('assets/img/noticia-cer.svg');"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,46,.7) 0%,transparent 60%)"></div><span class="news-cat">CER</span></div><div class="news-body"><p class="news-date">Julio 2026</p><h3>Directiva CER: venció el plazo para identificar a las entidades críticas</h3><p>Los Estados debían identificar a las entidades críticas antes del 17 de julio de 2026. Sectores incluidos y plazos de notificación de incidentes.</p><a href="actualidad.html#directiva-cer" class="news-more">Leer más →</a></div></div>
-      <div class="news-card"><div class="news-photo" style="background-image:url('assets/img/noticia-nis2.svg');"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,46,.7) 0%,transparent 60%)"></div><span class="news-cat">NIS2</span></div><div class="news-body"><p class="news-date">Agosto 2026</p><h3>NIS2: España sigue sin transponerla y rige el régimen de 2021</h3><p>España no cumplió el plazo de 2024 y el régimen vigente sigue siendo el Real Decreto 43/2021. Qué se puede preparar ya.</p><a href="actualidad.html#nis2" class="news-more">Leer más →</a></div></div>
+      <div class="news-card"><div class="news-photo" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&q=70');"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,46,.7) 0%,transparent 60%)"></div><span class="news-cat">Legislación</span></div><div class="news-body"><p class="news-date">Marzo 2026</p><h3>La nueva Ley de Resiliencia de Entidades Críticas llega al Congreso</h3><p>El Consejo de Ministros aprobó el 17 de marzo de 2026 el proyecto de ley que traspone la Directiva CER. Sectores, obligaciones y autoridad designada.</p><a href="actualidad.html#ley-resiliencia" class="news-more">Leer más →</a></div></div>
+      <div class="news-card"><div class="news-photo" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70');"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,46,.7) 0%,transparent 60%)"></div><span class="news-cat">CER</span></div><div class="news-body"><p class="news-date">Julio 2026</p><h3>Directiva CER: venció el plazo para identificar a las entidades críticas</h3><p>Los Estados debían identificar a las entidades críticas antes del 17 de julio de 2026. Sectores incluidos y plazos de notificación de incidentes.</p><a href="actualidad.html#directiva-cer" class="news-more">Leer más →</a></div></div>
+      <div class="news-card"><div class="news-photo" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=70');"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,46,.7) 0%,transparent 60%)"></div><span class="news-cat">NIS2</span></div><div class="news-body"><p class="news-date">Agosto 2026</p><h3>NIS2: España sigue sin transponerla y rige el régimen de 2021</h3><p>España no cumplió el plazo de 2024 y el régimen vigente sigue siendo el Real Decreto 43/2021. Qué se puede preparar ya.</p><a href="actualidad.html#nis2" class="news-more">Leer más →</a></div></div>
     </div>
   </div>
 </section>

@@ -156,31 +156,12 @@ nav{background:linear-gradient(180deg,#06101E,#0A1A2E);border-bottom:3px solid v
   <p class="footer-copy">© 2026 LAMASSU Security Consulting · Madrid</p>
   <div class="footer-legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="#" class="js-reopen-cookies">Configurar cookies</a></div>
 </div></footer>
-<!-- BANNER Y PANEL DE COOKIES -->
-<div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
-  <div class="cookie-container">
-    <div class="cookie-content">
-      <h3 id="cookie-title">Cookies y privacidad</h3>
-      <p id="cookie-description">Utilizamos almacenamiento propio necesario para el funcionamiento de la web. Opcionalmente, contamos de forma anónima las visitas para mejorar nuestros servicios, sin cookies de terceros. Puede aceptar, rechazar lo opcional o configurar sus preferencias. Más información en nuestra <a href="cookies.html">Política de cookies</a>.</p>
-    </div>
-    <div class="cookie-buttons">
-      <button id="btn-accept-all" class="cookie-btn cookie-btn-primary" type="button">Aceptar todas</button>
-      <button id="btn-reject-all" class="cookie-btn cookie-btn-secondary" type="button">Rechazar opcionales</button>
-      <button id="btn-configure" class="cookie-btn cookie-btn-outline" type="button">Configurar</button>
-    </div>
-  </div>
-</div>
-<div id="cookie-modal" class="cookie-modal" aria-hidden="true">
-  <div class="cookie-modal-overlay"></div>
-  <div class="cookie-modal-content" role="dialog" aria-label="Preferencias de cookies">
-    <div class="cookie-modal-header"><h4>Preferencias de cookies</h4><button id="btn-close-modal" class="cookie-modal-close" aria-label="Cerrar" type="button">&times;</button></div>
-    <div class="cookie-modal-body">
-      <div class="cookie-option"><div class="cookie-option-header"><div><strong>Técnicas (necesarias)</strong><p>Imprescindibles para el funcionamiento de la web, guardar sus preferencias y mantener la sesión si accede a la extranet.</p></div>
-        <label class="cookie-switch"><input type="checkbox" checked disabled><span class="cookie-slider"></span></label></div></div>
-      <div class="cookie-option"><div class="cookie-option-header"><div><strong>Estadísticas anónimas (opcionales)</strong><p>Cuentan las visitas a las páginas para mejorar los contenidos. No usan cookies de terceros, no guardan su IP ni le identifican.</p></div>
-        <label class="cookie-switch"><input type="checkbox" id="check-analytics"><span class="cookie-slider"></span></label></div></div>
-    </div>
-    <div class="cookie-modal-footer"><button id="btn-save-preferences" class="cookie-btn cookie-btn-primary" type="button">Guardar selección</button></div>
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" role="dialog" aria-label="Aviso de cookies" style="display:none">
+  <p>Utilizamos almacenamiento propio necesario para el funcionamiento de la web y, si lo acepta, estadísticas anónimas de visitas. Algunas imágenes se cargan desde servidores de terceros. Más información en nuestra <a href="cookies.html">Política de cookies</a>.</p>
+  <div class="ck-btns">
+    <button class="ck-min" id="ck-min" type="button">Solo esenciales</button>
+    <button class="ck-all" id="ck-all" type="button">Aceptar todas</button>
   </div>
 </div>
 <script src="assets/js/config.js"></script><script src="assets/js/contador.js"></script><script src="assets/js/cookies.js"></script></body></html>
