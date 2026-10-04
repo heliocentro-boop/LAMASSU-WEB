@@ -38,7 +38,10 @@
   "serviceType": ["Plan de Seguridad del Operador","Plan de Protección Específico","Habilitaciones de Seguridad HSE","Auditorías de Seguridad Privada","Plan de Continuidad de Negocio","Peritaje en Seguridad","Análisis de Amenazas"]
 }
 </script>
-<link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="assets/css/fonts.css"><link rel="stylesheet" href="assets/css/cookies.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -499,16 +502,17 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
 @media(max-width:768px){.nav-inner{height:84px;padding:0 16px}.logo-hex{width:54px;height:54px}.logo-name{font-size:34px;letter-spacing:3px}.logo-sub{font-size:10px;letter-spacing:3px}.hero{padding-top:84px}.mob-menu{top:84px;max-height:calc(100vh - 84px)}}
 </style>
 </head>
-<body>
+<body class="cookie-open">
 
 <!-- COOKIE BANNER -->
-<div id="cookieBanner" role="dialog" aria-label="Aviso de cookies" style="display:none">
-  <p>Utilizamos almacenamiento propio necesario para el funcionamiento de la web y, si lo acepta, estadísticas anónimas de visitas. Algunas imágenes se cargan desde servidores de terceros. Más información en nuestra <a href="cookies.html">Política de cookies</a>.</p>
+<div id="cookieBanner">
+  <p>Utilizamos cookies propias y de terceros para mejorar su experiencia. Puede aceptar todas o gestionar sus preferencias. <a href="cookies.html">Política de cookies</a>.</p>
   <div class="ck-btns">
-    <button class="ck-min" id="ck-min" type="button">Solo esenciales</button>
-    <button class="ck-all" id="ck-all" type="button">Aceptar todas</button>
+    <button class="ck-min" onclick="closeCookie('essential')">Solo esenciales</button>
+    <button class="ck-all" onclick="closeCookie('all')">Aceptar todas</button>
   </div>
 </div>
+
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
@@ -1045,10 +1049,8 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
       <div class="form-row full"><div class="form-group"><label for="ctMensaje">Describa su situación</label><textarea name="mensaje" id="ctMensaje" placeholder="¿Ha recibido notificación del CNPIC? ¿Tiene documentación existente? ¿Cuántas instalaciones tiene?" required></textarea></div></div>
       <div class="form-row full"><div class="form-group"><p style="font-size:12px;color:var(--slate);margin:0">¿Necesita adjuntar documentación (notificación CNPIC, plan existente...)? Escríbanos a <a href="mailto:info@lamassu-security.es" style="color:var(--gold)">info@lamassu-security.es</a> tras enviar esta consulta.</p></div></div>
       <div id="ctFormMsg" style="display:none;margin-bottom:14px;padding:12px 16px;border-radius:2px;font-size:13px;line-height:1.5"></div>
-      <div class="form-row full"><div class="form-group"><label style="display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-size:13px;line-height:1.5;font-weight:400"><input type="checkbox" name="consentimiento" id="ctConsent" required style="margin-top:3px;flex-shrink:0"><span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y consiento el tratamiento de mis datos para responder a mi consulta.</span></label></div></div>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
       <button class="btn-gold form-submit" id="formSubmitBtn" type="submit">ENVIAR CONSULTA GRATUITA →</button>
-      <p class="form-privacy">Responsable: LAMASSU SECURITY CONSULTING S.L. Finalidad: atender su consulta. Derechos y más información en la <a href="privacidad.html" style="color:var(--gold)">política de privacidad</a>.</p>
+      <p class="form-privacy">Sus datos son tratados con total confidencialidad conforme al RGPD y la LOPD.</p>
     </form>
   </div>
 </section>
@@ -1084,7 +1086,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
       </a>
     </div>
     <p>© 2026 LAMASSU Security Consulting · Todos los derechos reservados</p>
-    <div class="footer-legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="#" class="js-reopen-cookies">Configurar cookies</a></div>
+    <div class="footer-legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a></div>
   </div>
 </footer>
 
@@ -1189,7 +1191,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
       </div>
       <div class="reg-privacy">
         <input type="checkbox" id="regPrivacy">
-        <label for="regPrivacy">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a> de LAMASSU Security Consulting. Mis datos serán tratados conforme al RGPD y la LOPD, exclusivamente para la gestión de esta inscripción.</label>
+        <label for="regPrivacy">He leído y acepto la <a href="#" onclick="return false">Política de Privacidad</a> de LAMASSU Security Consulting. Mis datos serán tratados conforme al RGPD y la LOPD, exclusivamente para la gestión de esta inscripción.</label>
       </div>
       <button class="reg-submit" id="regSubmitBtn" onclick="submitReg()">CONFIRMAR INSCRIPCIÓN →</button>
       <p class="reg-note">Recibirá confirmación por email en menos de 24h. Las plazas son limitadas.</p>
@@ -1227,6 +1229,16 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
 </div>
 
 <script>
+// Cookie
+function closeCookie(choice){
+  document.getElementById('cookieBanner').style.display='none';
+  document.body.classList.remove('cookie-open');
+  localStorage.setItem('lm_ck', choice==='all' ? 'all' : 'essential');
+}
+if(localStorage.getItem('lm_ck')){
+  document.getElementById('cookieBanner').style.display='none';
+  document.body.classList.remove('cookie-open');
+}
 
 // Mobile menu
 // ⚠️ VERSIÓN GITHUB PAGES — sin backend PHP disponible.
@@ -1234,6 +1246,7 @@ nav{background:linear-gradient(180deg,#06101E 0%,#0A1A2E 100%);border-bottom:3px
 // 1. Crea cuenta gratuita en https://formspree.io
 // 2. Nuevo formulario → email destino: info@lamassu-security.es (o el que uses)
 // 3. Copia el ID que te dan (ej: xpzgvkra) y sustitúyelo aquí abajo
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/XXXXXXXX';
 
 function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open')}
 
@@ -1251,7 +1264,7 @@ function gTranslateTo(langCode){
 }
 
 // Login
-function openLogin(){location.href='extranet.html'}
+function openLogin(){document.getElementById('loginModal').classList.add('open')}
 function closeLogin(){document.getElementById('loginModal').classList.remove('open')}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLogin()});
 
@@ -1291,11 +1304,7 @@ function openSvcPage(url, event){
   const frame = document.getElementById('svcModalFrame');
   const loading = document.getElementById('svcModalLoading');
   frame.onload = function(){
-    try{
-      var fd0=frame.contentDocument;
-      fd0.querySelectorAll('a[href$=".pdf"]').forEach(function(a){ a.setAttribute('download',''); });
-      fd0.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href$=".pdf"]');if(a&&window.LamassuContador)window.LamassuContador.descarga(a.getAttribute('href'));});
-    }catch(e){}
+    try{ frame.contentDocument.querySelectorAll('a[href$=".pdf"]').forEach(function(a){ a.setAttribute('download',''); }); }catch(e){}
     loading.style.display = 'none';
     frame.style.display = 'block';
   };
@@ -1352,10 +1361,9 @@ function submitReg(){
   fd.append('telefono', tel);
   fd.append('sector', document.getElementById('regSector').value);
   fd.append('servicio', 'Inscripción evento: ' + currentRegEvent);
-  fd.append('consentimiento', 'on');
   fd.append('mensaje', 'Inscripción a "'+currentRegEvent+'". Asistentes: '+document.getElementById('regAsistentes').value+'. Cómo nos conoció: '+document.getElementById('regFuente').value+'. Comentarios: '+document.getElementById('regComentarios').value);
-  LamassuContador.enviarConsulta(fd)
-    .then(r=>r)
+  fetch(FORMSPREE_ENDPOINT, { method:'POST', body: fd, headers: { 'Accept': 'application/json' } })
+    .then(r=>r.json())
     .then(data=>{
       btn.disabled = false;
       btn.textContent = 'CONFIRMAR INSCRIPCIÓN →';
@@ -1385,8 +1393,8 @@ if(contactForm){
     btn.textContent = 'ENVIANDO...';
     msgBox.style.display = 'none';
     const fd = new FormData(contactForm);
-    LamassuContador.enviarConsulta(fd)
-      .then(r=>r)
+    fetch(FORMSPREE_ENDPOINT, { method:'POST', body: fd, headers: { 'Accept': 'application/json' } })
+      .then(r=>r.json())
       .then(data=>{
         btn.disabled = false;
         btn.textContent = originalTxt;
@@ -1485,5 +1493,5 @@ function closeNorm(){document.getElementById('normModal').classList.remove('open
     </div>
   </div>
 </div>
-<script src="assets/js/config.js"></script><script src="assets/js/contador.js"></script><script src="assets/js/cookies.js"></script></body>
+</body>
 </html>
